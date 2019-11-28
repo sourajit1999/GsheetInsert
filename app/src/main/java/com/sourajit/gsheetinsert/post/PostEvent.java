@@ -1,5 +1,7 @@
 package com.sourajit.gsheetinsert.post;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -7,10 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.sourajit.gsheetinsert.R;
 
@@ -28,39 +27,37 @@ import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
 
-
-public class PostData extends AppCompatActivity {
+public class PostEvent extends AppCompatActivity {
     private ProgressDialog progress;
 
 
     EditText etName;
-    EditText etinstitution;
-    EditText etyear;
-    EditText etemail;
-    EditText etcontact;
-    EditText etsource;
+    EditText idCap;
+    EditText id1;
+    EditText id2;
+    EditText id3;
+
 
     Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form);
+        setContentView(R.layout.activity_post_event);
 
         button=(Button)findViewById(R.id.btn_submit);
 
-        etName=(EditText)findViewById(R.id.input_name);
-        etinstitution=(EditText)findViewById(R.id.institution);
-        etyear=(EditText)findViewById(R.id.year_grad);
-        etemail=(EditText)findViewById(R.id.email);
-        etcontact=(EditText)findViewById(R.id.contact);
-        etsource=(EditText)findViewById(R.id.source);
+        etName=(EditText)findViewById(R.id.team_name);
+        idCap=(EditText)findViewById(R.id.id_cap);
+        id1=(EditText)findViewById(R.id.id1);
+        id2=(EditText)findViewById(R.id.id2);
+        id3=(EditText)findViewById(R.id.id3);
+
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 new SendRequest().execute();
             }
@@ -68,6 +65,10 @@ public class PostData extends AppCompatActivity {
         }   );
 
     }
+
+
+
+
 
 
 
@@ -80,19 +81,18 @@ public class PostData extends AppCompatActivity {
 
             try{
                 //INSERT SCRIPT URL
-                URL url = new URL("https://script.google.com/macros/s/AKfycbz4GddobG6QuZAt9Izx64IY5R2FFRZgRuwKBKMu59NrNa-Xi0E/exec");
+                URL url = new URL("https://script.google.com/macros/s/AKfycbw_c753gGFsgMprBMlIJ20FWtp9zmZXHq6BDTjg5wrJ3U9NXFD_/exec");
                 JSONObject postDataParams = new JSONObject();
 
 
                 //INSERT SHEET ID
-                String id= "1jSnpGCkr2rdsziZTeq4kcm7no3B-jIOztW_bpcUmxlk";
+                String id= "1hqEPwv_DZgDTVGcQb6cGWLCcwKQ_GJZdyns7_gppQvI";
 
-                postDataParams.put("name",etName.getText().toString());
-                postDataParams.put("institution",etinstitution.getText().toString());
-                postDataParams.put("year",etyear.getText().toString());
-                postDataParams.put("email",etemail.getText().toString());
-                postDataParams.put("contact",etcontact.getText().toString());
-                postDataParams.put("source",etsource.getText().toString());
+                postDataParams.put("teamname",etName.getText().toString());
+                postDataParams.put("idcap",idCap.getText().toString());
+                postDataParams.put("id1",id1.getText().toString());
+                postDataParams.put("id2",id2.getText().toString());
+                postDataParams.put("id3",id3.getText().toString());
 
                 postDataParams.put("id",id);
 

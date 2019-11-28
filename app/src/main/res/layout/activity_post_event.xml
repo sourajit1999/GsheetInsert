@@ -30,59 +30,47 @@
 
 
 
-            <EditText
-                android:id="@+id/input_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:hint="Name" />
-
-
-
-
-            <EditText
-                android:id="@+id/institution"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="IEM"
-                android:hint="Institution" />
-
         <EditText
-            android:id="@+id/year_grad"
+            android:id="@+id/team_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:text="2022"
-            android:ems="4"
-            android:hint="Year of Graduation" />
+            android:hint="Team Name" />
 
 
 
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/id_cap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:inputType="textEmailAddress"
-            android:hint="Email" />
+            android:inputType="number"
+            android:hint="Your ID" />
 
 
         <EditText
-            android:id="@+id/contact"
+            android:id="@+id/id1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="partner 1 id" />
+
+
+        <EditText
+            android:id="@+id/id2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:ems="10"
-            android:inputType="phone"
-            android:hint="Contact No."/>
+            android:inputType="number"
+            android:hint="partner 2 id"/>
 
         <EditText
-            android:id="@+id/source"
+            android:id="@+id/id3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Social Media"
-            android:hint="Source of Infromation" />
+            android:inputType="number"
+            android:hint="partner 3 id" />
 
 
 

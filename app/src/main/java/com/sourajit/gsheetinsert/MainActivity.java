@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sourajit.gsheetinsert.post.PostData;
+import com.sourajit.gsheetinsert.post.PostEvent;
 
 
 /**
@@ -16,13 +17,15 @@ public class MainActivity extends AppCompatActivity {
 
     Button getData;
     Button sendData;
+    Button sendEventUser;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getData=(Button)findViewById(R.id.insertUser);
-        sendData=(Button)findViewById(R.id.viewUser);
+        getData=(Button)findViewById(R.id.viewUser);
+        sendData=(Button)findViewById(R.id.insertUser);
+        sendEventUser=(Button)findViewById(R.id.insertEventUser);
 
         getData.setOnClickListener(new View.OnClickListener(){
 
@@ -48,8 +51,18 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        sendEventUser.setOnClickListener(new View.OnClickListener(){
 
-    };
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(getApplicationContext(), PostEvent.class);
+                startActivity(intent);
+            }
+
+        });
+    }
 
 
 
